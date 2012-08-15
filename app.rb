@@ -20,20 +20,19 @@ class String
 end
 
 
-html = open("http://g1.globo.com/natureza/noticia/2012/08/brasil-retrocede-em-leis-federais-de-protecao-amazonia.html").read
-parser = Nokogiri::HTML(html);
-words = parser.search(".entry-content p").text.split("\n").map(&:remove_start_space).join("\n").split(" ")#.map(&:clean_word)
+#html = open("http://g1.globo.com/natureza/noticia/2012/08/brasil-retrocede-em-leis-federais-de-protecao-amazonia.html").read
+#parser = Nokogiri::HTML(html);
+#words = parser.search(".entry-content p").text.split("\n").map(&:remove_start_space).join("\n").split(" ")#.map(&:clean_word)
 
-binding.pry
+#binding.pry
 #.delete_if{|w| (w.size < 3 && w.size != /a|e|i|o|u/) or w.match(/^\d+$/) }.flatten
 
-puts words
+#puts words
 =begin
 word_count = 0
 verso_count = 0
 estrofe = 0
 
-types = [ "Monóstico", "Dístico", "Terceto", "Quarteto ou quadra", "Quintilha", "Sextilha", "Septilha", "Oitava", "Nona", "Décima"]
 
 max_verso = 4
 max_word = 4
