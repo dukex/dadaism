@@ -4,6 +4,7 @@ require 'bundler'
 Bundler.require
 
 require 'open-uri'
+require 'sinatra'
 
 class String
   def remove_start_space
@@ -63,3 +64,18 @@ words.shuffle.each_with_index do |word, i|
   exit if estrofe == max_verso
 end
 =end
+class Dadaism
+  TYPES = [ "Monóstico", "Dístico", "Terceto", "Quarteto ou quadra", "Quintilha", "Sextilha", "Septilha", "Oitava", "Nona", "Décima"]
+end
+
+class DadaismApp < Sinatra::Base
+
+  get "/" do
+    @types = Dadaism::TYPES
+    haml :index
+  end
+
+  post "/poem" do
+    poem = params[:poem]
+  end
+end
