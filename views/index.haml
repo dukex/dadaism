@@ -1,0 +1,13 @@
+%form{action: "/poem", method: "POST"}
+  %ul.inputs
+    %li
+      %label{for: "poem_source"} Source:
+      %input#poem_source{name: "poem[source]"}
+    %li
+      %label{for: "poem_type"} Type:
+      %select#poem_type{name: "poem[type]"}
+        - @types.each_with_index do |type, i|
+          %option{value: i}= type
+  %ul.actions
+    %li
+      %input{type: "submit", value: "Go!"}
