@@ -2,9 +2,8 @@
 require 'bundler'
 
 Bundler.require
+$:.unshift(File.expand_path(File.join(File.dirname(__FILE__), "lib")))
 
-require 'open-uri'
-require 'sinatra'
 
 class String
   def remove_start_space
